@@ -1,0 +1,570 @@
+/* Edit Sales Return Modal Overlay and Container */
+.edit-sales-return-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.edit-sales-return-modal-container {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Edit Sales Return Modal Header */
+.edit-sales-return-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.edit-sales-return-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.edit-sales-return-close-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.edit-sales-return-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Edit Sales Return Modal Body */
+.edit-sales-return-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* Edit Sales Return Form Layout */
+.edit-sales-return-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.edit-sales-return-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.edit-sales-return-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.edit-sales-return-form-input {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.edit-sales-return-form-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-sales-return-form-input:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+/* Edit Sales Return Sale Information */
+.edit-sales-return-sale-info {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.edit-sales-return-sale-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 12px;
+}
+
+.edit-sales-return-sale-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.edit-sales-return-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.edit-sales-return-detail-item span:first-child {
+  font-weight: 500;
+  color: #374151;
+}
+
+.edit-sales-return-detail-item span:last-child {
+  font-weight: 600;
+  color: #1e40af;
+}
+
+/* Edit Sales Return Search Product Styles */
+.edit-sales-return-search-product-container {
+  position: relative;
+}
+
+.edit-sales-return-search-product-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  z-index: 2;
+}
+
+.edit-sales-return-search-product-input {
+  padding-left: 40px;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+}
+
+.edit-sales-return-search-product-input:focus {
+  background-color: #ffffff;
+  border-color: #00bc7d;
+}
+
+.edit-sales-return-product-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.edit-sales-return-product-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-sales-return-product-item:hover {
+  background-color: #eff6ff;
+}
+
+.edit-sales-return-product-price {
+  color: #00bc7d;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Edit Sales Return Order Items Section */
+.edit-sales-return-order-items-section {
+  margin: 24px 0;
+}
+
+.edit-sales-return-order-items-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.edit-sales-return-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.edit-sales-return-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.edit-sales-return-order-table thead {
+  background-color: #f9fafb;
+}
+
+.edit-sales-return-order-table th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.edit-sales-return-order-table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.edit-sales-return-empty-message {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px;
+}
+
+.edit-sales-return-qty-input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.edit-sales-return-qty-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-sales-return-qty-input:disabled {
+  background-color: #f9fafb;
+}
+
+.edit-sales-return-reason-input {
+  width: 120px;
+  padding: 6px 8px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.edit-sales-return-reason-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-sales-return-max-qty {
+  font-weight: 600;
+  color: #00bc7d;
+  text-align: center;
+}
+
+.edit-sales-return-total-cell {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.edit-sales-return-delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-sales-return-delete-btn:hover {
+  background-color: #fecaca;
+}
+
+.edit-sales-return-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Edit Sales Return Summary Section */
+.edit-sales-return-summary-section {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.edit-sales-return-empty-area {
+  background-color: transparent;
+}
+
+.edit-sales-return-summary-box {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.edit-sales-return-summary-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.edit-sales-return-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.edit-sales-return-summary-row span {
+  color: #374151;
+  font-weight: 500;
+}
+
+.edit-sales-return-summary-value {
+  color: #00bc7d;
+  font-weight: 600;
+}
+
+.edit-sales-return-summary-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.edit-sales-return-summary-input {
+  width: 120px;
+  padding: 6px 8px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: right;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.edit-sales-return-summary-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-sales-return-summary-input::placeholder {
+  color: #d1d5db;
+}
+
+.edit-sales-return-summary-input:disabled {
+  background-color: #f9fafb;
+}
+
+.edit-sales-return-grand-total {
+  border-top: 2px solid #dbeafe;
+  margin-top: 8px;
+  padding-top: 16px;
+  font-size: 16px;
+}
+
+.edit-sales-return-grand-total span {
+  font-weight: 700;
+}
+
+.edit-sales-return-grand-total .edit-sales-return-summary-value {
+  font-size: 18px;
+}
+
+/* Edit Sales Return Textarea */
+.edit-sales-return-form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  background-color: #ffffff;
+}
+
+.edit-sales-return-form-textarea:focus {
+  border-color: #00bc7d;
+}
+
+.edit-sales-return-form-textarea:disabled {
+  background-color: #f9fafb;
+}
+
+/* Edit Sales Return Modal Footer */
+.edit-sales-return-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #dbeafe;
+  background-color: #eff6ff;
+}
+
+.edit-sales-return-btn-cancel {
+  padding: 10px 24px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-sales-return-btn-cancel:hover {
+  background-color: #f3f4f6;
+}
+
+.edit-sales-return-btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.edit-sales-return-btn-submit {
+  padding: 10px 24px;
+  background-color: #00bc7d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-sales-return-btn-submit:hover {
+  background-color: #00bc7d;
+}
+
+.edit-sales-return-btn-submit:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .edit-sales-return-modal-overlay {
+    padding: 10px;
+  }
+
+  .edit-sales-return-modal-container {
+    max-height: 95vh;
+  }
+
+  .edit-sales-return-modal-header {
+    padding: 16px 20px;
+  }
+
+  .edit-sales-return-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .edit-sales-return-modal-body {
+    padding: 20px;
+  }
+
+  .edit-sales-return-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-sales-return-sale-details {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-sales-return-summary-section {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-sales-return-empty-area {
+    display: none;
+  }
+
+  .edit-sales-return-summary-box {
+    width: 100%;
+  }
+
+  .edit-sales-return-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .edit-sales-return-modal-footer {
+    padding: 16px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .edit-sales-return-modal-overlay {
+    padding: 0;
+  }
+
+  .edit-sales-return-modal-container {
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .edit-sales-return-modal-header {
+    padding: 12px 16px;
+  }
+
+  .edit-sales-return-modal-header h2 {
+    font-size: 18px;
+  }
+
+  .edit-sales-return-modal-body {
+    padding: 16px;
+  }
+
+  .edit-sales-return-order-table th,
+  .edit-sales-return-order-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .edit-sales-return-qty-input {
+    width: 60px;
+  }
+
+  .edit-sales-return-reason-input {
+    width: 80px;
+  }
+
+  .edit-sales-return-summary-input {
+    width: 100px;
+  }
+
+  .edit-sales-return-modal-footer {
+    flex-direction: column;
+  }
+
+  .edit-sales-return-btn-cancel,
+  .edit-sales-return-btn-submit {
+    width: 100%;
+  }
+}

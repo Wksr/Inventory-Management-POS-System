@@ -1,0 +1,45 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('business_id')->constrained()->onDelete('cascade');
+            $table->foreignId('branch_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
+            
+    
+            $table->string('name');
+            $table->string('sku');
+            $table->string('unit')->nullable();
+            $table->decimal('cost_price', 10, 2)->default(0);
+            $table->decimal('price', 10, 2)->default(0);
+            $table->string('supplier')->nullable();
+            $table->integer('stock')->default(0);
+            $table->integer('low_stock_alert')->default(10);
+            $table->string('color')->nullable();
+            $table->string('size')->nullable();
+            $table->date('expire_date')->nullable();
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
+            
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+
+            // Unique SKU per branch
+            $table->unique(['branch_id', 'sku']);
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('products');
+    }
+};

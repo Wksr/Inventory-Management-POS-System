@@ -1,0 +1,578 @@
+/* Edit Return Modal Overlay and Container */
+.edit-return-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.edit-return-modal-container {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Edit Return Modal Header */
+.edit-return-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.edit-return-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.edit-return-close-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.edit-return-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Edit Return Modal Body */
+.edit-return-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* Edit Return Form Layout */
+.edit-return-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.edit-return-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.edit-return-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.edit-return-form-input {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.edit-return-form-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-return-form-input:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+/* Edit Return Purchase Information */
+.edit-return-purchase-info {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.edit-return-purchase-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 12px;
+}
+
+.edit-return-purchase-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.edit-return-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.edit-return-detail-item span:first-child {
+  font-weight: 500;
+  color: #374151;
+}
+
+.edit-return-detail-item span:last-child {
+  font-weight: 600;
+  color: #1e40af;
+}
+
+/* Edit Return Search Product Styles */
+.edit-return-search-product-container {
+  position: relative;
+}
+
+.edit-return-search-product-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  z-index: 2;
+}
+
+.edit-return-search-product-input {
+  padding-left: 40px;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s;
+}
+
+.edit-return-search-product-input:focus {
+  background-color: #ffffff;
+  border-color: #00bc7d;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.edit-return-product-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.edit-return-product-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.edit-return-product-item:hover {
+  background-color: #eff6ff;
+}
+
+.edit-return-product-price {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Edit Return Order Items Section */
+.edit-return-order-items-section {
+  margin: 24px 0;
+}
+
+.edit-return-order-items-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.edit-return-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.edit-return-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.edit-return-order-table thead {
+  background-color: #f9fafb;
+}
+
+.edit-return-order-table th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.edit-return-order-table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.edit-return-empty-message {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px;
+}
+
+.edit-return-qty-input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.edit-return-qty-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-return-qty-input:disabled {
+  background-color: #f9fafb;
+}
+
+.edit-return-reason-input {
+  width: 120px;
+  padding: 6px 8px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.edit-return-reason-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-return-max-qty {
+  font-weight: 600;
+  color: #00bc7d;
+  text-align: center;
+}
+
+.edit-return-total-cell {
+  font-weight: 600;
+  color: #00bc7d;
+}
+
+.edit-return-delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.edit-return-delete-btn:hover {
+  background-color: #fecaca;
+}
+
+.edit-return-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Edit Return Summary Section */
+.edit-return-summary-section {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.edit-return-empty-area {
+  background-color: transparent;
+}
+
+.edit-return-summary-box {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.edit-return-summary-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.edit-return-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.edit-return-summary-row span {
+  color: #374151;
+  font-weight: 500;
+}
+
+.edit-return-summary-value {
+  color: #00bc7d;
+  font-weight: 600;
+}
+
+.edit-return-summary-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.edit-return-summary-input {
+  width: 120px;
+  padding: 6px 8px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: right;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.edit-return-summary-input:focus {
+  border-color: #00bc7d;
+}
+
+.edit-return-summary-input::placeholder {
+  color: #d1d5db;
+}
+
+.edit-return-summary-input:disabled {
+  background-color: #f9fafb;
+}
+
+.edit-return-grand-total {
+  border-top: 2px solid #dbeafe;
+  margin-top: 8px;
+  padding-top: 16px;
+  font-size: 16px;
+}
+
+.edit-return-grand-total span {
+  font-weight: 700;
+}
+
+.edit-return-grand-total .edit-return-summary-value {
+  font-size: 18px;
+}
+
+/* Edit Return Textarea */
+.edit-return-form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  background-color: #ffffff;
+}
+
+.edit-return-form-textarea:focus {
+  border-color: #00bc7d;
+}
+
+.edit-return-form-textarea:disabled {
+  background-color: #f9fafb;
+}
+
+/* Edit Return Modal Footer */
+.edit-return-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #dbeafe;
+  background-color: #eff6ff;
+}
+
+.edit-return-btn-cancel {
+  padding: 10px 24px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-return-btn-cancel:hover {
+  background-color: #f3f4f6;
+}
+
+.edit-return-btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.edit-return-btn-submit {
+  padding: 10px 24px;
+  background-color: #00bc7d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-return-btn-submit:hover {
+  background-color: #00bc7d;
+}
+
+.edit-return-btn-submit:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .edit-return-modal-overlay {
+    padding: 10px;
+  }
+
+  .edit-return-modal-container {
+    max-height: 95vh;
+  }
+
+  .edit-return-modal-header {
+    padding: 16px 20px;
+  }
+
+  .edit-return-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .edit-return-modal-body {
+    padding: 20px;
+  }
+
+  .edit-return-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-return-purchase-details {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-return-summary-section {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-return-empty-area {
+    display: none;
+  }
+
+  .edit-return-summary-box {
+    width: 100%;
+  }
+
+  .edit-return-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .edit-return-modal-footer {
+    padding: 16px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .edit-return-modal-overlay {
+    padding: 0;
+  }
+
+  .edit-return-modal-container {
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .edit-return-modal-header {
+    padding: 12px 16px;
+  }
+
+  .edit-return-modal-header h2 {
+    font-size: 18px;
+  }
+
+  .edit-return-modal-body {
+    padding: 16px;
+  }
+
+  .edit-return-order-table th,
+  .edit-return-order-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .edit-return-qty-input {
+    width: 60px;
+  }
+
+  .edit-return-reason-input {
+    width: 80px;
+  }
+
+  .edit-return-summary-input {
+    width: 100px;
+  }
+
+  .edit-return-modal-footer {
+    flex-direction: column;
+  }
+
+  .edit-return-btn-cancel,
+  .edit-return-btn-submit {
+    width: 100%;
+  }
+}

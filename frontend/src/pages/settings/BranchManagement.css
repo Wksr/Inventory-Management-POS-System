@@ -1,0 +1,420 @@
+.branch-management {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.header-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  max-width: 600px;
+}
+
+.add-branch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: #00bc7d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.add-branch-btn:hover:not(:disabled) {
+  background-color: #00bc7d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+.add-branch-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.management-content {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #6b7280;
+}
+
+.loading-state .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #059669;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.branches-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.branches-table thead {
+  background-color: #f9fafb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.branches-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.branches-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.branches-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Branch Info */
+.branch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.branch-name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.default-badge {
+  font-size: 10px;
+  background-color: #dbeafe;
+  color: #2563eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.branch-code {
+  font-size: 13px;
+  font-weight: 600;
+  color: #059669;
+  background-color: #f0fdf4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.users-count {
+  display: flex;
+  align-items: center;
+}
+
+.user-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 70px;
+}
+
+.user-badge.has-users {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.user-badge.no-users {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.branch-address {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-phone,
+.contact-email {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.contact-phone {
+  font-weight: 500;
+}
+
+.contact-email {
+  color: #6366f1;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge.active {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.status-badge.inactive {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.edit-btn {
+  background-color: #dbeafe;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.edit-btn:hover:not(:disabled) {
+  background-color: #bfdbfe;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background-color: #fecaca;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.1);
+}
+
+/* Permission Notice */
+.permission-notice {
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.permission-notice p {
+  margin: 0;
+  font-size: 14px;
+  color: #92400e;
+}
+
+.permission-notice svg {
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .branch-management {
+    padding: 16px;
+  }
+
+  .management-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .add-branch-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-content h1 {
+    font-size: 24px;
+  }
+
+  .branches-table th,
+  .branches-table td {
+    padding: 12px 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .action-btn {
+    min-width: 32px;
+    min-height: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .branch-management {
+    padding: 12px;
+  }
+
+  .header-content h1 {
+    font-size: 20px;
+  }
+
+  .empty-state {
+    padding: 60px 20px;
+  }
+
+  .empty-state h3 {
+    font-size: 18px;
+  }
+
+  .loading-state {
+    padding: 40px 20px;
+  }
+
+  .branch-code {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,245 @@
+/* AddCustomerModal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.modal-form {
+  padding: 20px;
+}
+
+.customer-form-group {
+  margin-bottom: 20px;
+}
+
+.customer-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+.customer-form-group label::after {
+  content: " *";
+  color: #ef4444;
+  opacity: 0.8;
+}
+
+.customer-form-group label:has(+ input:not([required]))::after {
+  content: "";
+}
+
+.customer-form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.customer-form-group input:focus {
+  outline: none;
+  border-color: #00bc7d;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.customer-form-group input.error {
+  border-color: #ef4444;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 20px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.customer-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.customer-btn-cancel,
+.customer-btn-save {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 14px;
+  min-height: 44px;
+  min-width: 120px;
+  touch-action: manipulation;
+  box-sizing: border-box;
+}
+
+.customer-btn-cancel {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.customer-btn-cancel:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.customer-btn-save {
+  background: #00bc7d;
+  color: white;
+}
+
+.customer-btn-save:hover:not(:disabled) {
+  background: #00bc7d;
+}
+
+.customer-btn-cancel:disabled,
+.customer-btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: 80vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-form {
+    padding: 16px;
+  }
+
+  .form-group input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 5px;
+  }
+
+  .modal-content {
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    padding: 12px;
+  }
+
+  .modal-form {
+    padding: 12px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .close-btn:hover,
+  .btn-cancel:hover,
+  .btn-save:hover {
+    background: none;
+  }
+
+  .btn-cancel:active,
+  .btn-save:active {
+    transform: scale(0.98);
+  }
+}

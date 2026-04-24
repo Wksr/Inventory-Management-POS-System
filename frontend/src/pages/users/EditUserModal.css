@@ -1,0 +1,286 @@
+/* Edit User Modal - Scoped Styles */
+.edit-user-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.edit-user-modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-user-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.edit-user-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.edit-user-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #6b7280;
+  touch-action: manipulation;
+}
+
+.edit-user-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.edit-user-form {
+  padding: 20px;
+}
+
+.edit-user-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.edit-user-form-group {
+  margin-bottom: 15px;
+}
+
+.edit-user-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.edit-user-form-group input,
+.edit-user-form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.edit-user-form-group input:focus,
+.edit-user-form-group select:focus {
+  outline: none;
+  border-color: #00bc7d;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.edit-user-form-group input.edit-user-error,
+.edit-user-form-group select.edit-user-error {
+  border-color: #ef4444;
+}
+
+.edit-user-error-text {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.edit-user-password-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.edit-user-password-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.edit-user-password-input-container {
+  position: relative;
+}
+
+.edit-user-password-input-container input {
+  padding-right: 40px;
+}
+
+.edit-user-password-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.edit-user-password-toggle:hover {
+  color: #374151;
+}
+
+.edit-user-error-message.submit-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.edit-user-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.edit-user-btn-cancel,
+.edit-user-btn-save {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 14px;
+  min-height: 44px;
+  min-width: 120px;
+  touch-action: manipulation;
+  box-sizing: border-box;
+}
+
+.edit-user-btn-cancel {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.edit-user-btn-cancel:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.edit-user-btn-save {
+  background: #00bc7d;
+  color: white;
+}
+
+.edit-user-btn-save:hover:not(:disabled) {
+  background: #00bc7d;
+}
+
+.edit-user-btn-cancel:disabled,
+.edit-user-btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .edit-user-modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .edit-user-modal-content {
+    max-height: 80vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .edit-user-modal-header {
+    padding: 16px;
+  }
+
+  .edit-user-modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .edit-user-form {
+    padding: 16px;
+  }
+
+  .edit-user-form-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .edit-user-form-group input,
+  .edit-user-form-group select {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .edit-user-password-toggle {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .edit-user-modal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .edit-user-btn-cancel,
+  .edit-user-btn-save {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-user-modal-overlay {
+    padding: 5px;
+  }
+
+  .edit-user-modal-content {
+    max-height: 85vh;
+  }
+
+  .edit-user-modal-header {
+    padding: 12px;
+  }
+
+  .edit-user-form {
+    padding: 12px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .edit-user-close-btn:hover,
+  .edit-user-password-toggle:hover,
+  .edit-user-btn-cancel:hover,
+  .edit-user-btn-save:hover {
+    background: none;
+  }
+
+  .edit-user-btn-cancel:active,
+  .edit-user-btn-save:active {
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,442 @@
+/* Default styles (desktop) remain the same */
+.category-page {
+  padding: 24px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.search-box {
+  position: relative;
+  width: 100px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+}
+
+.add-category-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-category-btn:hover {
+  background-color: #4f46e5;
+}
+
+.category-table-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.category-table thead {
+  background-color: #f9fafb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.category-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.category-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.category-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.edit-btn:hover {
+  background-color: #bfdbfe;
+}
+
+.delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-number {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Tablet Responsive (768px and below) */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 16px;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    font-size: 16px;
+  }
+
+  .add-category-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .category-table-container {
+    max-height: calc(100vh - 300px);
+  }
+
+  .category-table {
+    min-width: 600px; /* Allow horizontal scroll */
+  }
+
+  .table-footer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    padding: 12px 16px;
+  }
+
+  .pagination-info {
+    text-align: center;
+  }
+
+  .pagination-buttons {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .pagination-btn {
+    padding: 10px 14px;
+    min-height: 40px;
+  }
+}
+
+/* Mobile Responsive (480px and below) */
+@media (max-width: 480px) {
+  .category-page {
+    padding: 12px;
+  }
+
+  .category-header {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .search-input {
+    padding: 14px 12px 14px 40px;
+  }
+
+  .add-category-btn span {
+    display: none; /* Hide button text, show icon only */
+  }
+
+  .add-category-btn {
+    width: auto;
+    padding: 12px;
+    border-radius: 8px;
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* Convert table to card layout */
+  .category-table-container {
+    overflow: visible;
+    max-height: none;
+  }
+
+  .category-table {
+    display: none; /* Hide original table */
+  }
+
+  .mobile-category-list {
+    display: block;
+  }
+
+  .category-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .category-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .card-row:last-child {
+    border-bottom: none;
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+
+  .card-label {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .card-value {
+    font-size: 14px;
+    color: #6b7280;
+    flex: 2;
+    text-align: right;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .action-btn {
+    padding: 8px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .table-footer {
+    margin-top: 16px;
+    padding: 16px;
+  }
+
+  .pagination-buttons {
+    gap: 8px;
+  }
+
+  .pagination-btn {
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+
+  .pagination-btn span {
+    display: none; /* Hide pagination text */
+  }
+
+  .page-number {
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile (480px and below) - Stack filter and add buttons */
+@media (max-width: 480px) {
+  .category-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-box,
+  .add-category-btn {
+    width: 100%;
+  }
+
+  .add-category-btn {
+    justify-content: center;
+  }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .category-page {
+    padding: 8px;
+  }
+
+  .category-card {
+    padding: 12px;
+  }
+
+  .card-row {
+    padding: 6px 0;
+  }
+
+  .card-label,
+  .card-value {
+    font-size: 13px;
+  }
+
+  .action-btn {
+    padding: 6px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .table-footer {
+    padding: 12px;
+    margin-top: 12px;
+  }
+
+  .pagination-info {
+    font-size: 13px;
+  }
+
+  .pagination-btn {
+    padding: 8px 10px;
+    min-height: 40px;
+  }
+
+  .page-number {
+    font-size: 12px;
+  }
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+  .action-btn,
+  .pagination-btn,
+  .add-category-btn {
+    min-height: 40px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .category-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .search-input {
+    min-height: 48px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}

@@ -1,0 +1,444 @@
+/* Sales Return View Modal Overlay and Container */
+.sales-return-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.sales-return-view-container {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Sales Return View Modal Header */
+.sales-return-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.sales-return-view-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.sales-return-view-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sales-return-view-action-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sales-return-view-print-btn {
+  color: #059669;
+}
+
+.sales-return-view-print-btn:hover {
+  background-color: #d1fae5;
+}
+
+.sales-return-view-close-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.sales-return-view-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Sales Return View Modal Body */
+.sales-return-view-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.sales-return-view-loading,
+.sales-return-view-error-message {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Sales Return View Info Sections */
+.sales-return-view-info-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.sales-return-view-info-section {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.sales-return-view-info-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.sales-return-view-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sales-return-view-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.sales-return-view-info-label {
+  font-weight: 500;
+  color: #6b7280;
+  min-width: 120px;
+}
+
+.sales-return-view-info-value {
+  font-weight: 500;
+  color: #374151;
+  text-align: right;
+  flex: 1;
+}
+
+/* Status Badge */
+.sales-return-view-status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.sales-return-view-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.sales-return-view-status-partial {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+.sales-return-view-status-completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* Sales Return View Order Items Section */
+.sales-return-view-order-items-section {
+  margin: 24px 0;
+}
+
+.sales-return-view-order-items-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+.sales-return-view-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.sales-return-view-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.sales-return-view-order-table thead {
+  background-color: #f9fafb;
+}
+
+.sales-return-view-order-table th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sales-return-view-order-table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sales-return-view-order-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.sales-return-view-empty-message {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px;
+}
+
+.sales-return-view-total-cell {
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Sales Return View Summary Section */
+.sales-return-view-summary-section {
+  margin: 24px 0;
+}
+
+.sales-return-view-summary-box {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.sales-return-view-summary-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.sales-return-view-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.sales-return-view-summary-row span:first-child {
+  color: #374151;
+  font-weight: 500;
+}
+
+.sales-return-view-summary-value {
+  color: #374151;
+  font-weight: 600;
+}
+
+.sales-return-view-discount {
+  color: #ef4444;
+}
+
+.sales-return-view-grand-total {
+  border-top: 2px solid #e5e7eb;
+  margin-top: 8px;
+  padding-top: 16px;
+  font-size: 16px;
+}
+
+.sales-return-view-grand-total span:first-child {
+  font-weight: 700;
+}
+
+.sales-return-view-grand-total .sales-return-view-summary-value {
+  font-size: 18px;
+  color: #059669;
+}
+
+.sales-return-view-balance-row .sales-return-view-summary-value {
+  font-weight: 700;
+}
+
+.sales-return-view-balance-amount {
+  color: #dc2626;
+}
+
+.sales-return-view-fully-paid {
+  color: #059669;
+}
+
+/* Sales Return View Notes Section */
+.sales-return-view-notes-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sales-return-view-notes-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.sales-return-view-notes-content {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* Sales Return View Modal Footer */
+.sales-return-view-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.sales-return-view-btn-cancel {
+  padding: 10px 24px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sales-return-view-btn-cancel:hover {
+  background-color: #f3f4f6;
+}
+
+/* Print Styles */
+@media print {
+  .sales-return-view-overlay {
+    background: white;
+    position: static;
+    padding: 0;
+  }
+
+  .sales-return-view-container {
+    box-shadow: none;
+    max-height: none;
+    max-width: none;
+  }
+
+  .sales-return-view-header-actions,
+  .sales-return-view-modal-footer {
+    display: none;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .sales-return-view-overlay {
+    padding: 10px;
+  }
+
+  .sales-return-view-container {
+    max-height: 95vh;
+  }
+
+  .sales-return-view-header {
+    padding: 16px 20px;
+  }
+
+  .sales-return-view-header h2 {
+    font-size: 18px;
+  }
+
+  .sales-return-view-body {
+    padding: 20px;
+  }
+
+  .sales-return-view-info-sections {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sales-return-view-summary-box {
+    max-width: 100%;
+  }
+
+  .sales-return-view-order-table th,
+  .sales-return-view-order-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .sales-return-view-modal-footer {
+    padding: 16px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sales-return-view-overlay {
+    padding: 0;
+  }
+
+  .sales-return-view-container {
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .sales-return-view-header {
+    padding: 12px 16px;
+  }
+
+  .sales-return-view-header h2 {
+    font-size: 16px;
+  }
+
+  .sales-return-view-body {
+    padding: 16px;
+  }
+
+  .sales-return-view-info-section {
+    padding: 16px;
+  }
+
+  .sales-return-view-order-table {
+    min-width: 500px;
+  }
+}

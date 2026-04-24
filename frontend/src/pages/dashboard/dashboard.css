@@ -1,0 +1,88 @@
+.dashboard {
+  padding: 30px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+.dashboard-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Vertical Layout - Everything stacks */
+.charts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tables-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.tables-grid table {
+  min-width: 100%;
+}
+
+/* Tablet Responsive */
+@media (min-width: 768px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+  }
+
+  .charts-grid,
+  .tables-grid {
+    gap: 20px;
+  }
+}
+
+/* Desktop Responsive */
+@media (min-width: 1024px) {
+  .dashboard {
+    padding: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .dashboard {
+    padding: 12px;
+  }
+
+  .charts-grid,
+  .tables-grid {
+    gap: 12px;
+  }
+
+  /* Ensure minimum touch target size */
+  button,
+  .filter-btn,
+  .refresh-btn,
+  .view-all-btn,
+  .restock-btn,
+  .apply-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  input,
+  select {
+    font-size: 16px;
+    min-height: 44px;
+  }
+}

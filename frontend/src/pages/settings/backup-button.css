@@ -1,0 +1,30 @@
+.backup-button {
+  background-color: #00bc7d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+
+.backup-button:hover {
+  background-color: #00a36c;
+  transform: translateY(-2px);
+}
+
+.backup-button:disabled {
+  background-color: #64748b;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.backup-button:active {
+  transform: scale(0.98);
+}

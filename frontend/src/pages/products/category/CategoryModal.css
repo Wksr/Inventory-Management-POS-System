@@ -1,0 +1,239 @@
+.category-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.category-modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.category-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.category-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #6b7280;
+  touch-action: manipulation;
+}
+
+.category-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.category-form {
+  padding: 20px;
+}
+
+.category-form-group {
+  margin-bottom: 20px;
+}
+
+.category-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+.category-form-group input,
+.category-form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.category-form-group input:focus,
+.category-form-group textarea:focus {
+  outline: none;
+  border-color: #00bc7d;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.category-form-group input.category-error,
+.category-form-group textarea.category-error {
+  border-color: #ef4444;
+}
+
+.category-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.category-error-text {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.category-error-message.submit-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 20px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.category-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.category-btn-cancel,
+.category-btn-save {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 14px;
+  min-height: 44px;
+  min-width: 120px;
+  touch-action: manipulation;
+  box-sizing: border-box;
+}
+
+.category-btn-cancel {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.category-btn-cancel:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.category-btn-save {
+  background: #00bc7d;
+  color: white;
+}
+
+.category-btn-save:hover:not(:disabled) {
+  background: #00bc7d;
+}
+
+.category-btn-cancel:disabled,
+.category-btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .category-modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .category-modal-content {
+    max-height: 80vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .category-modal-header {
+    padding: 16px;
+  }
+
+  .category-modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .category-form {
+    padding: 16px;
+  }
+
+  .category-form-group input,
+  .category-form-group textarea {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .category-modal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .category-btn-cancel,
+  .category-btn-save {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-modal-overlay {
+    padding: 5px;
+  }
+
+  .category-modal-content {
+    max-height: 85vh;
+  }
+
+  .category-modal-header {
+    padding: 12px;
+  }
+
+  .category-form {
+    padding: 12px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .category-close-btn:hover,
+  .category-btn-cancel:hover,
+  .category-btn-save:hover {
+    background: none;
+  }
+
+  .category-btn-cancel:active,
+  .category-btn-save:active {
+    transform: scale(0.98);
+  }
+}

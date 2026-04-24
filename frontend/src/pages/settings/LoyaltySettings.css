@@ -1,0 +1,419 @@
+/* src/components/settings/LoyaltySettings.css */
+
+.loyalty-settings {
+  width: 100%;
+  min-height: 500px;
+}
+
+.loyalty-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.loyalty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 12px;
+  color: white;
+}
+
+.loyalty-header-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.loyalty-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.loyalty-main-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.settings-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+
+.toggle-item.large {
+  padding: 16px;
+}
+
+.toggle-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toggle-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.toggle-description {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.toggle-switch-large {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-slider-large {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+
+.toggle-slider-large:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-input:checked + .toggle-slider-large {
+  background-color: #00bc7d;
+}
+
+.toggle-input:checked + .toggle-slider-large:before {
+  transform: translateX(24px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.label-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.label-description {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.input-with-unit {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-unit input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.input-with-unit input:focus {
+  outline: none;
+  border-color: #00bc7d;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.input-with-unit input:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.input-unit {
+  position: absolute;
+  right: 12px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.example-box {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+}
+
+.example-box h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00bc7d;
+  margin: 0 0 8px 0;
+}
+
+.example-text {
+  font-size: 14px;
+  color: #00bc7d;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.example-formula {
+  font-size: 12px;
+  color: #00bc7d;
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #86efac;
+}
+
+.loyalty-summary {
+  margin: 32px 0;
+  max-width: 600px;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.summary-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #065f46;
+  margin: 0 0 16px 0;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #bbf7d0;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #00bc7d;
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 14px;
+  color: #00bc7d;
+  font-weight: 500;
+}
+
+.status-active {
+  color: #00bc7d;
+  background-color: #d1fae5;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-inactive {
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.loyalty-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 2px solid #e5e7eb;
+  max-width: 600px;
+}
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-save {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background-color: #00bc7d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #00bc7d;
+}
+
+.btn-save:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 12px;
+}
+
+.loading-spinner-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .loyalty-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .loyalty-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .settings-section {
+    padding: 16px;
+  }
+
+  .loyalty-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-reset,
+  .btn-save {
+    width: 100%;
+    justify-content: center;
+  }
+}
